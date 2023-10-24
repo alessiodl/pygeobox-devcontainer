@@ -1,0 +1,5 @@
+pandas
+geopandas
+gdal
+openpyxl
+earthaccess
