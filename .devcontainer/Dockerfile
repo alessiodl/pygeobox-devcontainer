@@ -1,17 +1,7 @@
-FROM ubuntu:22.04
+FROM ghcr.io/osgeo/gdal:ubuntu-small-3.9.0
 
+RUN apt-get update && apt-get -y install python3-pip python3-venv --fix-missing
 
-# Install system packages and libraries
-RUN apt-get update \
-	&& apt-get -y install gcc g++ software-properties-common \
-	&& add-apt-repository ppa:deadsnakes/ppa \
-	&& apt-get update \
-	&& apt-get -y install python3 python3-pip python3-distutils python3-apt python3-dev \
- 	&& add-apt-repository ppa:ubuntugis/ppa \
- 	&& apt-get update \
-	&& apt search gdal-bin \
-	&& apt-get -y install gdal-bin \
-	&& apt-get -y install libpq-dev libgdal-dev
-
-# Install project dependencies
-# RUN pip install --no-cache-dir -r ../requirements.txt
+ENV VIRTUAL_ENV=/opt/geoenv
+RUN python3 -m venv $VIRTUAL_ENV
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"

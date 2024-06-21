@@ -1,14 +1,22 @@
 {
   "name": "PyGeoBox",
   "build": { 
-    "dockerfile": "Dockerfile" 
+    "dockerfile": "Dockerfile",
+    "context": ".."
   },
-  "postCreateCommand": "pip install -r requirements.txt",
   "customizations": {
     "vscode": {
+      "settings": {
+        "python.pythonPath": "/opt/geoenv/bin/python3",
+        "workbench.colorTheme": "GitHub Dark Default"
+      },
       "extensions": [
-		    "ms-python.python"
-	    ]
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter",
+        "GitHub.github-vscode-theme"
+      ]
     }
-  }
+  },
+  "postCreateCommand": "pip install -r requirements.txt && python3 src/scripts/main.py"
 }

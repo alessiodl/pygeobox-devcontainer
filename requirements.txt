@@ -2,4 +2,11 @@ pandas
 geopandas
 gdal
 openpyxl
+plotly
+folium
 earthaccess
+pystac-client
+odc-stac
+xarray
+rioxarray
+ipykernel
