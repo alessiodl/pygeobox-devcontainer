@@ -14,6 +14,3 @@ Non è necessario saper usare Docker! Basta seguire questi semplici passaggi:
  * Aprire la cartella clonata in Visual Studio Code 
 
 L'IDE riconoscerà il file .devcontainer/devcontainer.json e mostrerà un popup per far partire l'ambiente di sviluppo, installando i pacchetti elencati in *requirements.txt*.
-
-# Note
-E' preferibile fare un fork del repository in modo da salvare eventuali modifiche e personalizzazioni per futuri utilizzi
